@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: uzair-gpt
+    runtime: node
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /healthz
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: AI_API_KEY
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: ALERT_EMAIL
+        value: uuzairarani3@gmail.com
+      - key: RESEND_API_KEY
+        sync: false
+      - key: SMTP_USER
+        sync: false
+      - key: SMTP_PASS
+        sync: false

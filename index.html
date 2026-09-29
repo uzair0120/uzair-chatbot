@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Uzair GPT</title>
+<meta name="theme-color" content="#faf9f5">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23c96442'/%3E%3Ctext x='50' y='66' font-size='52' text-anchor='middle' fill='white' font-family='Georgia'%3EU%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <aside id="sidebar">
+    <div class="side-top">
+      <div class="brand"><span class="logo">✺</span> Uzair GPT</div>
+      <button id="closeSide" class="icon only-mobile" aria-label="Close">✕</button>
+    </div>
+    <button id="newChat" class="new">＋ Nayi chat</button>
+    <div class="label">Purani chats</div>
+    <div id="convList"></div>
+    <div class="side-bottom">
+      <div id="userBox"></div>
+      <button id="themeBtn" class="icon" title="Dark / Light">◐</button>
+    </div>
+  </aside>
+
+  <main>
+    <header>
+      <button id="menuBtn" class="icon only-mobile" aria-label="Menu">☰</button>
+      <div id="title">Uzair GPT</div>
+    </header>
+
+    <div id="scroll">
+      <div id="welcome">
+        <div class="spark">✺</div>
+        <h1 id="greet" dir="auto">Assalam o Alaikum</h1>
+        <p>Kisi bhi zubaan mein poochein: Urdu, Roman Urdu, Hindi ya English.</p>
+        <div id="chips">
+          <button class="sugg">Mujhe ek chhoti si kahani sunao</button>
+          <button class="sugg">Python mein todo app ka code likho</button>
+          <button class="sugg">Explain AI in simple Urdu</button>
+          <button class="sugg">Meri CV behtar kaise banayen?</button>
+        </div>
+      </div>
+      <div id="messages"></div>
+    </div>
+
+    <div id="composerWrap">
+      <div id="attach"></div>
+      <div id="composer">
+        <textarea id="input" rows="1" placeholder="Uzair GPT se poochein…" dir="auto"></textarea>
+        <div class="row">
+          <div class="left">
+            <button id="fileBtn" class="icon" title="File ya photo lagayen" aria-label="Attach">📎</button>
+            <input id="file" type="file" multiple hidden accept="image/png,image/jpeg,image/webp,image/gif,application/pdf,.txt,.md,.csv,.json,.html">
+          </div>
+          <div class="right">
+            <button id="micBtn" class="icon" title="Bol kar likhein" aria-label="Dictate">🎤</button>
+            <button id="liveBtn" class="live" title="Live baat-cheet">〰 Live</button>
+            <button id="sendBtn" class="send" title="Bhejein" aria-label="Send">↑</button>
+          </div>
+        </div>
+      </div>
+      <div class="note">AI ghalti kar sakta hai. Zaroori maloomat dobara check karein.</div>
+    </div>
+  </main>
+</div>
+
+<div id="overlayBg" hidden></div>
+
+<div id="authModal" class="modal" hidden>
+  <div class="card">
+    <button id="authClose" class="icon x" aria-label="Close">✕</button>
+    <div class="spark">✺</div>
+    <h2 id="authTitle">Pehle login karein</h2>
+    <p id="authSub">Chat shuru karne ke liye account chahiye.</p>
+    <div class="tabs"><button id="tabLogin" class="on">Login</button><button id="tabReg">Register</button></div>
+    <div id="authForm">
+      <input id="aName" placeholder="Aap ka naam" autocomplete="name" hidden>
+      <input id="aEmail" type="email" placeholder="Email" autocomplete="email">
+      <input id="aPass" type="password" placeholder="Password (kam az kam 8)" autocomplete="current-password">
+      <div id="authErr" class="err"></div>
+      <button id="authGo" class="primary">Login</button>
+    </div>
+  </div>
+</div>
+
+<div id="live" class="modal" hidden>
+  <div class="card livecard">
+    <button id="liveClose" class="icon x" aria-label="Close">✕</button>
+    <div id="orb"></div>
+    <div id="liveState">Shuru ho raha hai…</div>
+    <div id="liveText" dir="auto"></div>
+    <select id="liveLang" aria-label="Zubaan">
+      <option value="ur-PK">اردو (Urdu)</option>
+      <option value="hi-IN">हिन्दी (Hindi)</option>
+      <option value="en-US">English</option>
+    </select>
+    <button id="liveEnd" class="primary">Khatam karein</button>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
